@@ -2,17 +2,6 @@
 
 This toolkit converts Graylog's Swagger 1.2 API documentation into a modern OpenAPI 3.0 specification.
 
-## Features
-
-- ✅ Fetch Swagger 1.2 API docs directly from a Graylog instance  
-- ✅ Converts all current API paths from Swagger 1.2 to OpenAPI 3.0  
-- ✅ Generates modular YAML files organized by domain  
-- ✅ Combines modular files into a single specification  
-- ✅ Preserves all schema definitions  
-- ✅ Proper parameter and response type mapping  
-- ✅ Full support for authentication schemes and security definitions  
-- ✅ Organized into manageable files (~60–320 KB each)  
-
 ## Prerequisites
 
 - Node.js **14.0.0 or higher**  
@@ -163,6 +152,17 @@ npm run cleanall
 ---
 
 ## Additional Notes
+
+### Features
+
+- ✅ Fetch Swagger 1.2 API docs directly from a Graylog instance  
+- ✅ Converts all current API paths from Swagger 1.2 to OpenAPI 3.0  
+- ✅ Generates modular YAML files organized by domain  
+- ✅ Combines modular files into a single specification  
+- ✅ Preserves all schema definitions  
+- ✅ Proper parameter and response type mapping  
+- ✅ Full support for authentication schemes and security definitions  
+- ✅ Organized into manageable files (~60–320 KB each)  
 
 ### API Coverage
 
