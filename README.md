@@ -23,7 +23,6 @@ yarn install
 If you want to do everything (fetch, generate, combine, and build docs) in one go, run:
 ```
 npm run all -- "http://admin:admin123@mygraylog:9000/"
-open docs.html
 ```
 
 > [!NOTE]
@@ -33,6 +32,11 @@ open docs.html
 > 3.	Generate modular OpenAPI YAML files
 > 4.	Combine them into a single YAML spec
 > 5.	Build HTML documentation
+
+To view the generated docs:
+```
+open docs.html
+```
 
 ---
 
