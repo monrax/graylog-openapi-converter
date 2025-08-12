@@ -35,17 +35,21 @@ If you want to do everything (fetch, generate, combine, and build docs) in one g
 ```
 npm run all -- "http://admin:admin123@mygraylog:9000/"
 ```
-The `all` script will:
 
-	1.	Clean previous generated files
-	2.	Fetch the latest Swagger endpoints from Graylog
-	3.	Generate modular OpenAPI YAML files
-	4.	Combine them into a single YAML spec
-	5.	Build HTML documentation
+> [!NOTE]
+> The `all` script will:
+> 1.	Clean previous generated files
+> 2.	Fetch the latest Swagger endpoints from Graylog
+> 3.	Generate modular OpenAPI YAML files
+> 4.	Combine them into a single YAML spec
+> 5.	Build HTML documentation
 
 ---
 
 If you'd rather do each step one by one, here's how to do that:
+
+<details closed>
+<summary><code>fetch</code></summary>
 
 ### Fetching Graylog API Endpoints
 
@@ -65,6 +69,11 @@ This will:
 	•	Fetch them all in parallel (with a live progress counter)
 	•	Save them into graylog-swagger-endpoints.json in the project root
 
+</details>
+
+<details closed>
+<summary><code>generate</code></summary>
+	
 ### Generating Modular OpenAPI Files
 
 Once you’ve fetched the Graylog endpoints:
@@ -99,6 +108,10 @@ graylog-api/
     ├── plugin-schemas.yaml       # Plugin schemas
     └── common-schemas.yaml       # Shared schemas
 ```
+</details>
+
+<details closed>
+<summary><code>combine</code></summary>
 
 ### Combining Into a Single OpenAPI Spec
 
@@ -109,6 +122,11 @@ npm run combine
 
 This creates a single `graylog-openapi-combined.yaml` file (~2.3 MB) containing the complete specification.
 
+</details>
+
+<details closed>
+<summary><code>build-docs</code></summary>
+	
 ### Building HTML Docs
 
 To render HTML API docs using Redocly CLI:
@@ -128,6 +146,9 @@ This outputs `docs.html` in the project root.
 | `graylog-api/schemas/*.yaml` | 80-320 KB each | Schema definitions |
 | `graylog-openapi-combined.yaml` | ~2.3 MB | Single combined file |
 
+</details>
+
+---
 
 ### Cleaning Generated Files
 
@@ -141,6 +162,8 @@ npm run cleanall
 ```
 
 ---
+
+## Additional Notes
 
 ### API Coverage
 
@@ -180,34 +203,6 @@ The combine script includes basic validation:
 - ✓ Validates path definitions exist
 - ✓ Verifies schema references are resolved
 - ⚠ Warns about missing schema definitions
-
-### Troubleshooting
-
-#### Missing Dependencies
-
-```bash
-npm install js-yaml
-```
-
-#### Memory Issues (for very large APIs)
-
-```bash
-# Increase Node.js memory limit
-node --max-old-space-size=4096 generate-openapi.js
-```
-
-#### Invalid YAML Output
-
-The scripts use `js-yaml` with `lineWidth: -1` to prevent line wrapping. If you need different formatting:
-
-```javascript
-// In generate-openapi.js or combine-openapi.js
-yaml.dump(data, {
-  lineWidth: 120,  // Set specific line width
-  indent: 2,        // Indentation spaces
-  sortKeys: true    // Sort object keys
-})
-```
 
 ### Support
 
