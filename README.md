@@ -23,6 +23,7 @@ yarn install
 If you want to do everything (fetch, generate, combine, and build docs) in one go, run:
 ```
 npm run all -- "http://admin:admin123@mygraylog:9000/"
+open docs.html
 ```
 
 > [!NOTE]
