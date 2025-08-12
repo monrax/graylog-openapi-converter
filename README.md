@@ -33,6 +33,18 @@ npm run all -- "http://admin:admin123@mygraylog:9000/"
 > 4.	Combine them into a single YAML spec
 > 5.	Build HTML documentation
 
+### Output Files
+
+| File/Directory | Size | Description |
+|----------------|------|-------------|
+| `graylog-swagger-endpoints.json` | ~970 KB | Array of current Graylog API endpoint groups |
+| `graylog-api/` | ~2.3 MB total | Modular specification |
+| `graylog-api/openapi.yaml` | ~150 KB | Main file with $refs to all paths and schemas |
+| `graylog-api/paths/*.yaml` | 60-320 KB each | Domain-specific endpoints |
+| `graylog-api/schemas/*.yaml` | 80-320 KB each | Schema definitions |
+| `graylog-openapi-combined.yaml` | ~2.3 MB | Single combined file |
+| `docs.html` | ~14 MB | Static HTML docs rendered using [Redocly](https://github.com/Redocly/redoc) |
+
 To view the generated docs:
 ```
 open docs.html
@@ -128,17 +140,6 @@ To render HTML API docs using Redocly CLI:
 npm run build-docs
 ```
 This outputs `docs.html` in the project root.
-
-### Output Files
-
-| File/Directory | Size | Description |
-|----------------|------|-------------|
-| `graylog-swagger-endpoints.json` | ~970 KB | Array of current Graylog API endpoint groups |
-| `graylog-api/` | ~2.3 MB total | Modular specification |
-| `graylog-api/openapi.yaml` | ~150 KB | Main file with $refs to all paths and schemas |
-| `graylog-api/paths/*.yaml` | 60-320 KB each | Domain-specific endpoints |
-| `graylog-api/schemas/*.yaml` | 80-320 KB each | Schema definitions |
-| `graylog-openapi-combined.yaml` | ~2.3 MB | Single combined file |
 
 </details>
 
