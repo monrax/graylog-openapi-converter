@@ -148,9 +148,8 @@ This outputs `docs.html` in the project root.
 
 </details>
 
----
 
-### Cleaning Generated Files
+## Cleanup
 
 To remove all generated files:
 ```
