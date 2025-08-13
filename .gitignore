@@ -143,3 +143,10 @@ graylog-swagger-endpoints.json
 graylog-api/*
 graylog-openapi-combined.yaml
 docs.html
+
+# Local backups
+*.old
+*.bkp
+
+# In development
+validator/mcp
