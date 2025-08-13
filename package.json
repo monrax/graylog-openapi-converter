@@ -2,13 +2,12 @@
   "name": "graylog-openapi-generator",
   "version": "1.0.0",
   "description": "Generate OpenAPI 3.0 specification from Graylog Swagger 1.2 data",
-  "main": "generate-openapi.js",
   "scripts": {
-    "fetch": "node fetch-swagger.js",
-    "generate": "node generate-openapi.js",
-    "combine": "node combine-openapi.js",
+    "fetch": "node scripts/fetch-swagger.js",
+    "generate": "node scripts/generate-openapi.js",
+    "combine": "node scripts/combine-openapi.js",
     "build-docs": "npx @redocly/cli build-docs graylog-api/openapi.yaml -o docs.html",
-    "all": "node all.js",
+    "all": "node scripts/all.js",
     "clean": "rm -rf graylog-api graylog-openapi-combined.yaml docs.html",
     "cleanall": "npm run clean && rm -f graylog-swagger-endpoints.json"
   },

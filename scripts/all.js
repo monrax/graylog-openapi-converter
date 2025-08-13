@@ -30,7 +30,7 @@ if (forceFetch || !fileExists) {
     console.error('   or: GRAYLOG_URL=<graylog_base_url> npm run all [--fetch]');
     process.exit(1);
   }
-  runStep('node', ['fetch-swagger.js', url], 'fetch');
+  runStep('node', [__dirname + '/fetch-swagger.js', url], 'fetch');
 } else {
   console.log(`Skipping fetch: ${endpointsFile} already exists (use --fetch to force)`);
 }
