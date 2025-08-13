@@ -12,13 +12,13 @@ It also relies on the older Swagger 1.2 format.
 
 This project aims addresses these issues in three phases:
 
-1. Convert the currently available JSON docs to an equivalent YAML OpenAPI 3 spec. [✔]
+1. **Convert** the currently available JSON docs to an equivalent YAML OpenAPI 3 spec. [✔]
    This will produce one resource to act as single source of truth, able to use modern doc rendering tools like redoc.
    Steps:
      a. Fetch JSON from a running Graylog 6.3 instance [✔]
      b. Parse spec from downloaded JSON and generate a single OpenAPI 3 spec file [✔]
      c. Generate a docs UI for the new spec [✔]
-2. Validate the spec against a running Graylog cluster []
+2. **Validate** the spec against a running Graylog cluster []
    This will help us ensure the spec matches reality by testing it against an actual Graylog instance, the same one that produced the JSON docs.
    Steps:
      a. Make a script to go through each endpoint one by one and identify errors [✔]
